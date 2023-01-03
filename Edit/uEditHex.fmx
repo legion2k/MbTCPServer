@@ -1,0 +1,46 @@
+object fmEditHex: TfmEditHex
+  Size.Width = 115.000000000000000000
+  Size.Height = 24.000000000000000000
+  Size.PlatformDefault = False
+  object Edit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Client
+    StyleLookup = 'Edit_AddrStyle'
+    TabOrder = 1
+    Text = '0'
+    TextSettings.HorzAlign = Center
+    Size.Width = 115.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    ParentShowHint = False
+    ShowHint = True
+    OnChangeTracking = EditChangeTracking
+    OnExit = EditUpdateText
+    object EditButtonUp: TEditButton
+      CanFocus = False
+      Cursor = crArrow
+      Margins.Left = -1.000000000000000000
+      Position.X = -1.000000000000000000
+      RepeatClick = True
+      Size.Width = 14.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'spintopbutton'
+      TabOrder = 0
+      OnClick = EditButtonUpClick
+    end
+    object EditButtonDown: TEditButton
+      CanFocus = False
+      Cursor = crArrow
+      Margins.Left = 1.000000000000000000
+      Margins.Right = -1.000000000000000000
+      Position.X = 14.000000000000000000
+      Size.Width = 14.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'spinbottombutton'
+      TabOrder = 1
+      OnClick = EditButtonDownClick
+    end
+  end
+end

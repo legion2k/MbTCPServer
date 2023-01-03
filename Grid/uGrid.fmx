@@ -1,0 +1,57 @@
+object fmGrid: TfmGrid
+  Align = Client
+  Size.Width = 833.000000000000000000
+  Size.Height = 501.000000000000000000
+  Size.PlatformDefault = False
+  object GridFixCol: TGrid
+    Align = Left
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 50.000000000000000000
+    Size.Height = 501.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'GridFixStyle'
+    TabOrder = 1
+    TabStop = False
+    RowCount = 0
+    Options = [RowLines, Tabs, Header, AutoDisplacement]
+    OnSelectCell = Grid_FixColSelectCell
+    OnResize = Grid_FixColResize
+    Viewport.Width = 48.000000000000000000
+    Viewport.Height = 473.000000000000000000
+    object FixCol: TStringColumn
+      HorzAlign = Center
+      ReadOnly = True
+      Size.Width = 50.000000000000000000
+    end
+  end
+  object Grid: TGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 779.000000000000000000
+    Size.Height = 501.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'GridLineStyle'
+    TextSettings.HorzAlign = Center
+    TabOrder = 0
+    RowCount = 0
+    Options = [ColumnResize, ColLines, RowLines, Tabs, Header, AutoDisplacement]
+    DefaultDrawing = False
+    OnSelectCell = Grid_SelectCell
+    OnResized = Grid_OnResize
+    Viewport.Width = 779.000000000000000000
+    Viewport.Height = 474.000000000000000000
+  end
+  object Splitter: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 50.000000000000000000
+    Position.X = 50.000000000000000000
+    Size.Width = 4.000000000000000000
+    Size.Height = 501.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'SplitterGridsStyle'
+    TabStop = False
+  end
+end

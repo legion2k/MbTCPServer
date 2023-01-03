@@ -1,0 +1,128 @@
+object frmMapReg_Descrites: TfrmMapReg_Descrites
+  Align = Client
+  Padding.Left = 5.000000000000000000
+  Padding.Top = 5.000000000000000000
+  Padding.Right = 5.000000000000000000
+  Padding.Bottom = 5.000000000000000000
+  Size.Width = 649.000000000000000000
+  Size.Height = 366.000000000000000000
+  Size.PlatformDefault = False
+  object PanelBottom: TPanel
+    Align = Bottom
+    Margins.Top = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 309.000000000000000000
+    Size.Width = 639.000000000000000000
+    Size.Height = 52.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object LayoutRmLevel: TLayout
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 212.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object Edit_RegViewStyle: TComboBox
+        Align = Client
+        DropDownCount = 10
+        ItemIndex = 5
+        DropDownKind = Custom
+        Size.Width = 212.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 41
+        OnChange = Edit_RegViewStyleChange
+        object ListBoxItem4: TListBoxItem
+          Size.Width = 19.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 26
+          Text = ' '#171#1051#1086#1078#1100#187' / '#171#1055#1088#1072#1074#1076#1072#187
+        end
+        object ListBoxItem5: TListBoxItem
+          TabOrder = 27
+          Text = ' '#171'FLASE'#187' / '#171'TRUE'#187
+        end
+        object ListBoxItem6: TListBoxItem
+          TabOrder = 28
+          Text = ' '#171#1053#1077#1090#187' / '#171#1044#1072#187
+        end
+        object ListBoxItem7: TListBoxItem
+          TabOrder = 29
+          Text = ' '#171'No'#187' / '#171'Yes'#187
+        end
+        object ListBoxItem8: TListBoxItem
+          TabOrder = 30
+          Text = ' '#171'-'#187' / '#171'+'#187
+        end
+        object ListBoxItem1: TListBoxItem
+          IsSelected = True
+          Size.Width = 19.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 23
+          Text = ' '#171'0'#187' / '#171'1'#187
+        end
+        object ListBoxItem2: TListBoxItem
+          TabOrder = 24
+          Text = ' '#171' '#187' /  '#171'1'#187
+        end
+        object ListBoxItem3: TListBoxItem
+          TabOrder = 25
+          Text = ' '#171'0'#187' /  '#171' '#187
+        end
+      end
+      object Label16: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 1.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 1.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1042#1080#1076' '#1076#1080#1089#1082#1088#1077#1090#1085#1099#1093' '#1089#1086#1089#1090#1086#1103#1085#1080#1081':'
+        TabOrder = 40
+      end
+    end
+  end
+  inline fmMapRegs: TfmMapRegs
+    Align = Client
+    Size.Width = 639.000000000000000000
+    Size.Height = 299.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inherited PanelTop: TPanel
+      Size.Width = 639.000000000000000000
+    end
+    inherited fmGrid: TfmGrid
+      Size.Width = 639.000000000000000000
+      Size.Height = 249.000000000000000000
+      inherited GridFixCol: TGrid
+        Size.Height = 249.000000000000000000
+        Viewport.Width = 48.000000000000000000
+        Viewport.Height = 221.000000000000000000
+        inherited FixCol: TStringColumn
+          Size.Width = 50.000000000000000000
+        end
+      end
+      inherited Grid: TGrid
+        PopupMenu = fmMapRegs.PopupMenu
+        Size.Width = 586.000000000000000000
+        Size.Height = 249.000000000000000000
+        Viewport.Width = 586.000000000000000000
+        Viewport.Height = 222.000000000000000000
+      end
+      inherited Splitter: TSplitter
+        Size.Height = 249.000000000000000000
+      end
+    end
+  end
+end

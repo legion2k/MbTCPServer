@@ -1,0 +1,524 @@
+object fmServerSettings: TfmServerSettings
+  Align = Client
+  Padding.Left = 5.000000000000000000
+  Padding.Top = 5.000000000000000000
+  Padding.Right = 5.000000000000000000
+  Padding.Bottom = 5.000000000000000000
+  Size.Width = 1033.000000000000000000
+  Size.Height = 630.000000000000000000
+  Size.PlatformDefault = False
+  object PanelLeft: TPanel
+    Align = Left
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 620.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ScrollBox: TScrollBox
+      Align = Client
+      ClipChildren = True
+      Padding.Left = 8.000000000000000000
+      Padding.Top = 5.000000000000000000
+      Padding.Right = 8.000000000000000000
+      Padding.Bottom = 8.000000000000000000
+      Size.Width = 297.000000000000000000
+      Size.Height = 620.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      TabStop = False
+      Viewport.Width = 297.000000000000000000
+      Viewport.Height = 620.000000000000000000
+      object Edit_Port: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 7
+        Cursor = crIBeam
+        Max = 65535.000000000000000000
+        Value = 502.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 70.000000000000000000
+        Hint = '502 - '#1055#1086#1088#1090' '#1087#1086' '#1091#1084#1086#1083#1095#1072#1085#1080#1102
+        Size.Width = 281.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+      end
+      object Label1: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 5.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 13.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 276.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'IP '#1072#1076#1088#1077#1089' '#1089#1077#1088#1074#1077#1088#1072':'
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 7.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 13.000000000000000000
+        Position.Y = 150.000000000000000000
+        Size.Width = 276.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1052#1072#1082#1089#1080#1084#1072#1083#1100#1085#1086#1077' '#1082#1086#1083'-'#1074#1086' '#1089#1086#1077#1076#1080#1085#1077#1085#1080#1081':'
+        TabOrder = 3
+      end
+      object Edit_MaxConn: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 9
+        Cursor = crIBeam
+        Max = 65535.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 168.000000000000000000
+        Hint = '0 - '#1041#1077#1079' '#1086#1075#1088#1072#1085#1080#1095#1077#1085#1080#1081
+        Size.Width = 281.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+      end
+      object Label2: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 7.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 13.000000000000000000
+        Position.Y = 199.000000000000000000
+        Size.Width = 276.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1058#1072#1081#1084#1072#1091#1090' '#1089#1086#1077#1076#1080#1085#1077#1085#1080#1103' ('#1084#1089#1077#1082'):'
+        TabOrder = 4
+      end
+      object Edit_TimeoutConn: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 10
+        Cursor = crIBeam
+        Min = -1.000000000000000000
+        Max = 2147483647.000000000000000000
+        Value = 10000.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 217.000000000000000000
+        Hint = 
+          #1042#1088#1077#1084#1103' '#1087#1088#1086#1089#1090#1086#1103', '#1087#1086#1089#1083#1077' '#1095#1077#1075#1086' '#1082#1083#1080#1077#1085#1090' '#1073#1091#1076#1077#1090' '#1086#1090#1082#1083#1102#1095#1077#1085'.'#13'-1 - '#1041#1077#1079' '#1086#1075#1088#1072#1085#1080 +
+          #1095#1077#1085#1080#1081
+        Size.Width = 281.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+      end
+      object Label5: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 7.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 13.000000000000000000
+        Position.Y = 52.000000000000000000
+        Size.Width = 276.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1055#1086#1088#1090' '#1074#1093#1086#1076#1103#1097#1080#1093' '#1087#1086#1076#1082#1083#1102#1095#1077#1085#1080#1081':'
+        TabOrder = 1
+      end
+      object Edit_IP: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 6
+        Text = '0.0.0.0'
+        Position.X = 8.000000000000000000
+        Position.Y = 23.000000000000000000
+        Hint = '0.0.0.0 - IP '#1087#1086' '#1091#1084#1086#1083#1095#1072#1085#1080#1102
+        Size.Width = 281.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = #1059#1082#1072#1078#1080#1090#1077' '#1072#1076#1088#1077#1089' '#1089#1077#1088#1074#1077#1088#1072
+        StyledSettings = [Family, Size, FontColor]
+      end
+      object GroupBox1: TGroupBox
+        Align = Top
+        StyledSettings = [Family, Size, FontColor, Other]
+        Padding.Left = 7.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 7.000000000000000000
+        Padding.Bottom = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 300.000000000000000000
+        Size.Width = 281.000000000000000000
+        Size.Height = 262.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1054#1090#1074#1077#1090#1099
+        TextSettings.Font.StyleExt = {00040000000200000004000000}
+        TabOrder = 12
+        object Answer_OK: TRadioButton
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Hint = #1054#1090#1074#1077#1095#1072#1090#1100' '#1082#1072#1082' '#1086#1073#1099#1095#1085#1086
+          IsChecked = True
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 7.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 267.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = #1054#1090#1074#1077#1095#1072#1090#1100' '#1085#1072' '#1079#1072#1087#1088#1086#1089#1099
+          TextSettings.Font.StyleExt = {04040000000000000004000000}
+          OnChange = Answer_Change
+        end
+        object Answer_Data: TRadioButton
+          Tag = 3
+          Align = Top
+          Hint = 
+            #1055#1072#1082#1077#1090' Modbus: xx xx oo oo yy yy aa ff DD'#13#1075#1076#1077#9'xx xx - '#1085#1086#1084#1077#1088' '#1090#1088#1072#1085#1079 +
+            #1072#1082#1094#1080#1080','#13#9'oo oo - '#1085#1091#1083#1080' ('#1087#1088#1086#1090#1086#1082#1086#1083'),'#13#9'yy yy - '#1089#1090#1072#1088#1096#1080#1081', '#1079#1072#1090#1077#1084' '#1084#1083#1072#1076#1096#1080#1081 +
+            ', '#1076#1083#1080#1085#1072' '#1089#1083#1077#1076#1091#1102#1097#1077#1081' '#1079#1072' '#1101#1090#1080#1084' '#1087#1086#1083#1077#1084' '#1095#1072#1089#1090#1080' '#1087#1072#1082#1077#1090#1072','#13#9'aa - '#1072#1076#1088#1077#1089' '#1074#1077#1076#1086#1084#1086 +
+            #1075#1086' '#1091#1089#1090#1088#1086#1081#1089#1090#1074#1072','#13#9'ff - '#1082#1086#1076' '#1092#1091#1082#1085#1082#1094#1080#1080','#13#9#9679' DD - '#1044#1040#1053#1053#1067#1045
+          Position.X = 7.000000000000000000
+          Position.Y = 114.000000000000000000
+          Size.Width = 267.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = #1054#1090#1074#1077#1095#1072#1090#1100' '#1076#1072#1085#1085#1099#1084#1080
+          OnChange = Answer_Change
+        end
+        object Answer_Mute: TRadioButton
+          Tag = 1
+          Align = Top
+          Hint = #1048#1075#1085#1086#1088#1080#1088#1086#1074#1072#1090#1100' '#1074#1089#1077' '#1079#1072#1087#1088#1086#1089#1099' '#1080' '#1085#1077' '#1086#1090#1074#1077#1095#1072#1090#1100
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 7.000000000000000000
+          Position.Y = 42.000000000000000000
+          Size.Width = 267.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = #1053#1077' '#1086#1090#1074#1077#1095#1072#1090#1100' '#1085#1072' '#1079#1072#1087#1088#1086#1089#1099
+          OnChange = Answer_Change
+        end
+        object Answer_Error: TRadioButton
+          Tag = 2
+          Align = Top
+          Hint = #1054#1090#1074#1077#1095#1072#1090#1100' '#1086#1096#1080#1073#1082#1086#1081' 0x80 0xXX'
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 7.000000000000000000
+          Position.Y = 65.000000000000000000
+          Size.Width = 267.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = #1054#1090#1074#1077#1095#1072#1090#1100' '#1086#1096#1080#1073#1082#1086#1081
+          OnChange = Answer_Change
+        end
+        object Answer_Full: TRadioButton
+          Tag = 5
+          Align = Top
+          Hint = 
+            #1057#1074#1086#1073#1086#1076#1085#1086' '#1089#1092#1086#1088#1084#1080#1088#1086#1074#1072#1085#1085#1099#1081' '#1087#1072#1082#1077#1090'.'#13#1055#1072#1082#1077#1090' Modbus: xx xx oo oo yy yy a' +
+            'a ff dd'#13#1075#1076#1077#9'xx xx - '#1085#1086#1084#1077#1088' '#1090#1088#1072#1085#1079#1072#1082#1094#1080#1080','#13#9'oo oo - '#1085#1091#1083#1080' ('#1087#1088#1086#1090#1086#1082#1086#1083'),'#13 +
+            #9'yy yy - '#1089#1090#1072#1088#1096#1080#1081', '#1079#1072#1090#1077#1084' '#1084#1083#1072#1076#1096#1080#1081', '#1076#1083#1080#1085#1072' '#1089#1083#1077#1076#1091#1102#1097#1077#1081' '#1079#1072' '#1101#1090#1080#1084' '#1087#1086#1083#1077#1084' '#1095 +
+            #1072#1089#1090#1080' '#1087#1072#1082#1077#1090#1072','#13#9'aa - '#1072#1076#1088#1077#1089' '#1074#1077#1076#1086#1084#1086#1075#1086' '#1091#1089#1090#1088#1086#1081#1089#1090#1074#1072','#13#9'ff - '#1082#1086#1076' '#1092#1091#1082#1085#1082#1094#1080#1080 +
+            ','#13#9'dd - '#1076#1072#1085#1085#1099#1077
+          Position.X = 7.000000000000000000
+          Position.Y = 208.000000000000000000
+          Size.Width = 267.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+          Text = #1054#1090#1074#1077#1095#1072#1090#1100' '#1087#1072#1082#1077#1090#1086#1084
+          OnChange = Answer_Change
+        end
+        object Answer_ADU: TRadioButton
+          Tag = 4
+          Align = Top
+          Hint = 
+            #1055#1072#1082#1077#1090' Modbus: xx xx oo oo yy yy AA FF DD'#13#1075#1076#1077#9'xx xx - '#1085#1086#1084#1077#1088' '#1090#1088#1072#1085#1079 +
+            #1072#1082#1094#1080#1080','#13#9'oo oo - '#1085#1091#1083#1080' ('#1087#1088#1086#1090#1086#1082#1086#1083'),'#13#9'yy yy - '#1089#1090#1072#1088#1096#1080#1081', '#1079#1072#1090#1077#1084' '#1084#1083#1072#1076#1096#1080#1081 +
+            ', '#1076#1083#1080#1085#1072' '#1089#1083#1077#1076#1091#1102#1097#1077#1081' '#1079#1072' '#1101#1090#1080#1084' '#1087#1086#1083#1077#1084' '#1095#1072#1089#1090#1080' '#1087#1072#1082#1077#1090#1072','#13#9#9679' AA - '#1040#1044#1056#1045#1057' '#1042#1045#1044#1054 +
+            #1052#1054#1043#1054' '#1059#1057#1058#1056#1054#1049#1057#1058#1042#1040','#13#9#9679' FF - '#1050#1054#1044' '#1060#1059#1050#1053#1050#1062#1048#1048','#13#9#9679' DD - '#1044#1040#1053#1053#1067#1045
+          Position.X = 7.000000000000000000
+          Position.Y = 161.000000000000000000
+          Size.Width = 267.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = #1054#1090#1074#1077#1095#1072#1090#1100' '#1095#1072#1089#1090#1100#1102' (ADU)'
+          OnChange = Answer_Change
+        end
+        object Edit_Error: TComboBox
+          Align = Top
+          DropDownCount = 10
+          ItemIndex = 5
+          ItemWidth = 300.000000000000000000
+          DropDownKind = Custom
+          Margins.Left = 13.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 88.000000000000000000
+          Size.Width = 254.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          OnChange = Edit_ErrorChange
+          object ListBoxItem1: TListBoxItem
+            Tag = 1
+            ItemData.Detail = 'ILLEGAL FUNCTION'
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 0
+            Text = '01'
+          end
+          object ListBoxItem2: TListBoxItem
+            Tag = 2
+            ItemData.Detail = 'ILLEGAL DATA ADDRESS'
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 1
+            Text = '02'
+          end
+          object ListBoxItem3: TListBoxItem
+            Tag = 3
+            ItemData.Detail = 'ILLEGAL DATA VALUE '
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 2
+            Text = '03'
+          end
+          object ListBoxItem4: TListBoxItem
+            Tag = 4
+            ItemData.Detail = 'SLAVE DEVICE FAILURE '
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 3
+            Text = '04'
+          end
+          object ListBoxItem5: TListBoxItem
+            Tag = 5
+            ItemData.Detail = 'ACKNOWLEDGE '
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 4
+            Text = '05'
+          end
+          object ListBoxItem6: TListBoxItem
+            Tag = 6
+            IsSelected = True
+            ItemData.Detail = 'SLAVE DEVICE BUSY'
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 5
+            Text = '06'
+          end
+          object ListBoxItem7: TListBoxItem
+            Tag = 8
+            ItemData.Detail = 'MEMORY PARITY ERROR'
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 6
+            Text = '08'
+          end
+          object ListBoxItem8: TListBoxItem
+            Tag = 10
+            ItemData.Detail = 'GATEWAY PATH UNAVAILABLE'
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 7
+            Text = '0A'
+          end
+          object ListBoxItem9: TListBoxItem
+            Tag = 11
+            ItemData.Detail = 'GATEWAY TARGET DEVICE FAILED TO RESPOND'
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'ProfileItemStyle'
+            TabOrder = 8
+            Text = '0B'
+          end
+        end
+        inline Edit_Data: TfmEditSendData
+          Align = Top
+          Margins.Left = 13.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 133.000000000000000000
+          Size.Width = 254.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabStop = False
+          TabOrder = 5
+          inherited Edit: TEdit
+            Size.Width = 254.000000000000000000
+            TextPrompt = #1053#1072#1087#1088#1080#1084#1077#1088': [00]'
+            OnChangeTracking = Edit_DataEditChangeTracking
+          end
+        end
+        inline Edit_ADU: TfmEditSendData
+          Align = Top
+          Margins.Left = 13.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 180.000000000000000000
+          Size.Width = 254.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabStop = False
+          TabOrder = 7
+          inherited Edit: TEdit
+            Size.Width = 254.000000000000000000
+            TextPrompt = #1053#1072#1087#1088#1080#1084#1077#1088': [FF 83 06]'
+            OnChangeTracking = Edit_ADUEditChangeTracking
+          end
+        end
+        inline Edit_Full: TfmEditSendData
+          Align = Top
+          Margins.Left = 13.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 20.000000000000000000
+          Position.Y = 227.000000000000000000
+          Size.Width = 254.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabStop = False
+          TabOrder = 10
+          inherited Edit: TEdit
+            Size.Width = 254.000000000000000000
+            TextPrompt = #1053#1072#1087#1088#1080#1084#1077#1088': [00-00 00-00 00-03 FF 83 06]'
+            OnChangeTracking = Edit_FullEditChangeTracking
+          end
+        end
+      end
+      object Label4: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 7.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 13.000000000000000000
+        Position.Y = 248.000000000000000000
+        Size.Width = 276.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1047#1072#1076#1077#1088#1078#1082#1072' '#1086#1090#1074#1077#1090#1072' ('#1084#1089#1077#1082'):'
+        TabOrder = 5
+      end
+      object Edit_SleepTime: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 11
+        Cursor = crIBeam
+        Max = 4294967295.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 266.000000000000000000
+        Hint = '0 - '#1041#1077#1079' '#1086#1075#1088#1072#1085#1080#1095#1077#1085#1080#1081
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 281.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+      end
+      object Label6: TLabel
+        Align = Top
+        AutoSize = True
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 7.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 13.000000000000000000
+        Position.Y = 101.000000000000000000
+        Size.Width = 276.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = #1040#1076#1088#1077#1089' '#1091#1089#1090#1088#1086#1081#1089#1090#1074#1072':'
+        TabOrder = 0
+      end
+      object Edit_Addr: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 8
+        Cursor = crIBeam
+        Max = 255.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 119.000000000000000000
+        Hint = '0 - '#1054#1090#1074#1077#1095#1072#1090#1100' '#1085#1072' '#1083#1102#1073#1086#1081' '#1072#1076#1088#1077#1089
+        Size.Width = 281.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+      end
+    end
+  end
+  object Splitter1: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 150.000000000000000000
+    Position.X = 302.000000000000000000
+    Position.Y = 5.000000000000000000
+    ShowGrip = False
+    Size.Width = 5.000000000000000000
+    Size.Height = 620.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object TimerUpdateData: TTimer
+    OnTimer = TimerUpdateDataTimer
+    Left = 416
+    Top = 64
+  end
+  object GridInfo: TStringGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 721.000000000000000000
+    Size.Height = 620.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    RowCount = 0
+    Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
+    Viewport.Width = 717.000000000000000000
+    Viewport.Height = 595.000000000000000000
+    object Col_ID: TIntegerColumn
+      HorzAlign = Center
+      Header = 'ID'
+      ReadOnly = True
+      Size.Width = 56.000000000000000000
+    end
+    object Col_LocalIP: TStringColumn
+      Header = #1051#1086#1082#1072#1083#1100#1085#1099#1081' IP'
+      ReadOnly = True
+      Size.Width = 222.000000000000000000
+    end
+    object Col_RemoteIP: TStringColumn
+      Header = #1059#1076#1072#1083#1077#1085#1085#1099#1081' IP'
+      ReadOnly = True
+      Size.Width = 222.000000000000000000
+    end
+    object Col_BytesIn: TIntegerColumn
+      HorzAlign = Leading
+      Header = #1055#1086#1083#1091#1095#1077#1085#1086' '#1073#1072#1081#1090
+      ReadOnly = True
+    end
+    object Col_BytesOut: TIntegerColumn
+      HorzAlign = Leading
+      Header = #1054#1090#1076#1072#1085#1086' '#1073#1072#1081#1090
+      ReadOnly = True
+    end
+  end
+end

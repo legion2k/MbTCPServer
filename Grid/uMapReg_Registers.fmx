@@ -1,0 +1,385 @@
+object frmMapReg_Registers: TfrmMapReg_Registers
+  Align = Client
+  Padding.Left = 5.000000000000000000
+  Padding.Top = 5.000000000000000000
+  Padding.Right = 5.000000000000000000
+  Padding.Bottom = 5.000000000000000000
+  Size.Width = 880.000000000000000000
+  Size.Height = 498.000000000000000000
+  Size.PlatformDefault = False
+  object PanelLeft: TPanel
+    Align = Left
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 238.000000000000000000
+    Size.Height = 488.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ScrollBox: TScrollBox
+      Align = Client
+      Size.Width = 238.000000000000000000
+      Size.Height = 488.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 238.000000000000000000
+      Viewport.Height = 488.000000000000000000
+      object LayoutRmLevel: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        object Edit_RegViewStyle: TComboBox
+          Align = Client
+          DropDownCount = 10
+          ItemIndex = 0
+          ItemWidth = 230.000000000000000000
+          DropDownKind = Custom
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 41
+          OnChange = Edit_RegViewStyleChange
+          object ListBoxItem1: TListBoxItem
+            IsSelected = True
+            ItemData.Detail = #1074' '#1044#1077#1089#1103#1090#1080#1095#1085#1086#1084' '#1074#1080#1076#1077
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 20
+            Text = #1044#1077#1089#1103#1090#1080#1095#1085#1099#1081' '#1073#1077#1079#1079#1085#1072#1082#1086#1074#1099#1081' (UInt)'
+          end
+          object ListBoxItem2: TListBoxItem
+            ItemData.Detail = #1074' '#1044#1077#1089#1103#1090#1080#1095#1085#1086#1084' '#1074#1080#1076#1077
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 21
+            Text = #1044#1077#1089#1103#1090#1080#1095#1085#1099#1081' '#1079#1085#1072#1082#1086#1074#1099#1081' (Int)'
+          end
+          object ListBoxItem3: TListBoxItem
+            ItemData.Detail = #1074' '#1064#1077#1089#1090#1085#1072#1076#1094#1072#1090#1080#1088#1080#1095#1085#1086#1084' '#1074#1080#1076#1077
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 22
+            Text = #1064#1077#1089#1090#1085#1072#1076#1094#1072#1090#1077#1088#1080#1095#1085#1099#1081' (HEX)'
+          end
+          object ListBoxItem4: TListBoxItem
+            ItemData.Detail = #1074' '#1064#1077#1089#1090#1085#1072#1076#1094#1072#1090#1080#1088#1080#1095#1085#1086#1084' '#1074#1080#1076#1077
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 23
+            Text = #1044#1074#1086#1080#1095#1085#1086#1081' (BIN)'
+          end
+          object ListBoxItem6: TListBoxItem
+            TabOrder = 25
+            Text = #1044#1077#1089#1103#1090#1080#1095#1085#1099#1081' '#1073#1077#1079#1079#1085#1072#1082#1086#1074#1099#1081' (DUInt)'
+          end
+          object ListBoxItem7: TListBoxItem
+            TabOrder = 26
+            Text = #1044#1077#1089#1103#1090#1080#1095#1085#1099#1081' '#1079#1085#1072#1082#1086#1074#1099#1081' (DInt)'
+          end
+          object ListBoxItem5: TListBoxItem
+            Size.Width = 19.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 24
+            Text = #1063#1080#1089#1083#1072' '#1089' '#1087#1083#1072#1074#1102#1097#1077#1081' '#1079#1072#1087#1103#1090#1086#1081' (Float)'
+          end
+        end
+        object Label16: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1042#1080#1076' '#1088#1077#1075#1080#1089#1090#1088#1086#1074':'
+          TabOrder = 40
+        end
+      end
+      object Layout1: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 52.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        object Label1: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' HEX:'
+          TabOrder = 40
+        end
+        object Edit_ViewHex: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '-'
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout2: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        object Label2: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' BIN:'
+          TabOrder = 40
+        end
+        object Edit_ViewBin: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '- '
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout3: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 193.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        object Label3: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' Int:'
+          TabOrder = 40
+        end
+        object Edit_ViewInt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '- '
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout4: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 146.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object Label4: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' UInt:'
+          TabOrder = 40
+        end
+        object Edit_ViewUInt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '- '
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout5: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 334.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object Label5: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' Float:'
+          TabOrder = 40
+        end
+        object Edit_ViewFloat: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '- '
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout6: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 287.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        object Label6: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' DInt:'
+          TabOrder = 40
+        end
+        object Edit_ViewDInt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '- '
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout7: TLayout
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 240.000000000000000000
+        Size.Width = 228.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        object Label7: TLabel
+          Align = Top
+          AutoSize = True
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 218.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = #1047#1085#1072#1095#1077#1085#1080#1077' DUInt:'
+          TabOrder = 40
+        end
+        object Edit_ViewDUInt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 41
+          ReadOnly = True
+          Text = '- '
+          Size.Width = 228.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+    end
+  end
+  object Splitter1: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 20.000000000000000000
+    Position.X = 243.000000000000000000
+    Position.Y = 5.000000000000000000
+    ShowGrip = False
+    Size.Width = 5.000000000000000000
+    Size.Height = 488.000000000000000000
+    Size.PlatformDefault = False
+  end
+  inline fmMapRegs: TfmMapRegs
+    Align = Client
+    Size.Width = 627.000000000000000000
+    Size.Height = 488.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inherited PanelTop: TPanel
+      Size.Width = 627.000000000000000000
+    end
+    inherited fmGrid: TfmGrid
+      Size.Width = 627.000000000000000000
+      Size.Height = 438.000000000000000000
+      inherited GridFixCol: TGrid
+        Size.Height = 438.000000000000000000
+        Viewport.Width = 48.000000000000000000
+        Viewport.Height = 410.000000000000000000
+        inherited FixCol: TStringColumn
+          Size.Width = 50.000000000000000000
+        end
+      end
+      inherited Grid: TGrid
+        PopupMenu = fmMapRegs.PopupMenu
+        Size.Width = 574.000000000000000000
+        Size.Height = 438.000000000000000000
+        Viewport.Width = 574.000000000000000000
+        Viewport.Height = 411.000000000000000000
+      end
+      inherited Splitter: TSplitter
+        Size.Height = 438.000000000000000000
+      end
+    end
+  end
+end

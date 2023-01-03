@@ -1,0 +1,58 @@
+object fmSimpleLog: TfmSimpleLog
+  Align = Bottom
+  Size.Width = 516.000000000000000000
+  Size.Height = 232.000000000000000000
+  Size.PlatformDefault = False
+  OnResized = FrameResized
+  object LogList: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    StyledSettings = [Size, Style, FontColor]
+    TextSettings.Font.Family = 'Consolas'
+    Align = Client
+    Bounces = True
+    Size.Width = 516.000000000000000000
+    Size.Height = 206.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 516.000000000000000000
+    Viewport.Height = 206.000000000000000000
+  end
+  object MesTypeList: TComboBox
+    Align = Top
+    ItemIndex = 0
+    Margins.Left = 1.000000000000000000
+    Margins.Top = 1.000000000000000000
+    Margins.Right = 1.000000000000000000
+    Margins.Bottom = 3.000000000000000000
+    Position.X = 1.000000000000000000
+    Position.Y = 1.000000000000000000
+    Size.Width = 514.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnChange = MesTypeListChange
+    object ListBoxItem_Simple: TListBoxItem
+      IsSelected = True
+      Size.Width = 19.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = #1058#1086#1083#1100#1082#1086' '#1086#1073#1097#1080#1077
+    end
+    object ListBoxItem_All: TListBoxItem
+      Size.Width = 19.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = #1042#1089#1077' '#1089#1086#1086#1073#1097#1077#1085#1080#1103
+    end
+  end
+  object TimerChechSize: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = TimerChechSizeTimer
+    Left = 184
+    Top = 114
+  end
+end
