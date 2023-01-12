@@ -209,7 +209,8 @@ end;
 procedure TMBBuf.SET_Count(Val: UInt16);
 begin
   SetLength(Buf, Val);
-  FillChar(Buf[1], Val, #0);
+  if Val>0 then
+    FillChar(Buf[1], Val, #0);
 end;
 
 // ---------------------------------------------------------------------
