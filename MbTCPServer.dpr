@@ -22,7 +22,8 @@ uses
   uTools in 'uTools.pas',
   uMapReg_Discretes in 'Grid\uMapReg_Discretes.pas' {frmMapReg_Descrites: TFrame},
   uMapReg_Registers in 'Grid\uMapReg_Registers.pas' {frmMapReg_Registers: TFrame},
-  uMapRegs in 'Grid\uMapRegs.pas' {fmMapRegs: TFrame};
+  uMapRegs in 'Grid\uMapRegs.pas' {fmMapRegs: TFrame},
+  uIniJSON in 'uIniJSON.pas';
 
 {$R *.res}
 

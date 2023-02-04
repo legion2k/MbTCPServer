@@ -69,7 +69,7 @@ implementation
 
 {$R *.fmx}
 
-uses uTools, uEditReg;
+uses uTools, uEditReg, uMbBuf;
 
 { TfrmMapReg_Registers }
 

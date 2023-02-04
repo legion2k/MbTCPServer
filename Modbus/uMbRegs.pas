@@ -5,10 +5,10 @@ uses uMbBuf;
 
 procedure MBReg(Write: Boolean; MBTable: TMBTable; RegAdr, RegCnt: UInt16; var Buf: TMBBuf);
 
-function getRegs4x(RegAdr, RegCnt: UInt16): TMBRegs;
-function getRegs3x(RegAdr, RegCnt: UInt16): TMBRegs;
-function getRegs1x(RegAdr, RegCnt: UInt16): TMBDiscrets;
-function getRegs0x(RegAdr, RegCnt: UInt16): TMBDiscrets;
+function getRegs4x(RegAdr, RegCnt: UInt32): TMBRegs;
+function getRegs3x(RegAdr, RegCnt: UInt32): TMBRegs;
+function getRegs1x(RegAdr, RegCnt: UInt32): TMBDiscrets;
+function getRegs0x(RegAdr, RegCnt: UInt32): TMBDiscrets;
 
 procedure setRegs4x(const Data: TMBRegs; RegAdr: UInt16);
 procedure setRegs3x(const Data: TMBRegs; RegAdr: UInt16);
@@ -27,20 +27,20 @@ procedure setReg0x(Data: TMBDiscret; RegAdr: UInt16);
 
 
 type
-  TMBRegs = uMbBuf.TMBRegs;
-  TFuncGetRegs = reference to function (RegAdr, RegCnt: UInt16): TMBRegs;
+  //TMBRegs = uMbBuf.TMBRegs;
+  TFuncGetRegs = reference to function (RegAdr, RegCnt: UInt32): TMBRegs;
   TProcSetRegs = reference to procedure(const Data: TMBRegs; RegAdr: UInt16);
 
   TFuncGetReg = reference to function (RegAdr: UInt16): TMBReg;
   TProcSetReg = reference to procedure(Data: TMBReg; RegAdr: UInt16);
 
-  TFuncGetDiscrets = reference to function (RegAdr, RegCnt: UInt16): TMBDiscrets;
+  TFuncGetDiscrets = reference to function (RegAdr, RegCnt: UInt32): TMBDiscrets;
   TProcSetDiscrets = reference to procedure(const Data: TMBDiscrets; RegAdr: UInt16);
 
   TFuncGetDiscret = reference to function (RegAdr: UInt16): TMBDiscret;
   TProcSetDiscret = reference to procedure(Data: TMBDiscret; RegAdr: UInt16);
 implementation
-uses System.SyncObjs, System.Classes, uMain;
+uses System.SyncObjs, System.Classes, System.SysUtils, uMain;
 
 const
   SizeOF_TMBReg = SizeOf(TMBReg);
@@ -54,26 +54,30 @@ var
   reg0x: TMBDiscrets;
 
 //----------------------------------------------------------------------------------------------------------------------
-function getRegs4x(RegAdr, RegCnt: UInt16): TMBRegs;
+function getRegs4x(RegAdr, RegCnt: UInt32): TMBRegs;
 begin
+  if RegCnt>$10_000 then raise EArgumentOutOfRangeException.Create('RegCnt Argument Out Of Range ');
   lock4x.Acquire;
   Result := copy(reg4x, RegAdr, RegCnt);
   lock4x.Release;
 end;
-function getRegs3x(RegAdr, RegCnt: UInt16): TMBRegs;
+function getRegs3x(RegAdr, RegCnt: UInt32): TMBRegs;
 begin
+  if RegCnt>$10_000 then raise EArgumentOutOfRangeException.Create('RegCnt Argument Out Of Range ');
   lock3x.Acquire;
   Result := copy(reg3x, RegAdr, RegCnt);
   lock3x.Release;
 end;
-function getRegs1x(RegAdr, RegCnt: UInt16): TMBDiscrets;
+function getRegs1x(RegAdr, RegCnt: UInt32): TMBDiscrets;
 begin
+  if RegCnt>$10_000 then raise EArgumentOutOfRangeException.Create('RegCnt Argument Out Of Range ');
   lock1x.Acquire;
   Result := copy(reg1x, RegAdr, RegCnt);
   lock1x.Release;
 end;
-function getRegs0x(RegAdr, RegCnt: UInt16): TMBDiscrets;
+function getRegs0x(RegAdr, RegCnt: UInt32): TMBDiscrets;
 begin
+  if RegCnt>$10_000 then raise EArgumentOutOfRangeException.Create('RegCnt Argument Out Of Range ');
   lock0x.Acquire;
   Result := copy(reg0x, RegAdr, RegCnt);
   lock0x.Release;

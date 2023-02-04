@@ -62,8 +62,8 @@ begin
   Inc(_globID);
   _clientSckt := AClientSocket;
   FreeOnTerminate := True;
-  _localIP := format('%s:%d (%s)', [_clientSckt.LocalAddress, _clientSckt.LocalPort, _clientSckt.LocalHost]);
-  _remoteIP := format('%s:%d (%s)', [_clientSckt.RemoteAddress, _clientSckt.RemotePort, _clientSckt.RemoteHost]);
+  _localIP  := format('%s:%d (%s)', [_clientSckt.LocalAddress,  _clientSckt.LocalPort, Tools.iff<string>(_clientSckt.LocalHost='', '-', _clientSckt.LocalHost)]);
+  _remoteIP := format('%s:%d (%s)', [_clientSckt.RemoteAddress, _clientSckt.RemotePort, Tools.iff<string>(_clientSckt.RemoteHost='', '-', _clientSckt.RemoteHost)]);
 end;
 
 destructor TModbusSrvClient.Destroy;
@@ -122,7 +122,7 @@ begin
           //4,5 - длина пакета — два байта, старший затем младший, длина следующей за этим полем части пакета
           //6,7 - адрес, фунция
           lng := bufI.ItemW[4];
-          if lng+6<>bufI.Count then Exit;
+          if lng+6<bufI.Count then Continue;
           if (_addr=0) or (bufI.Item[6]=_addr) then begin
             if ModbusServerParse(bufI.copy(7,lng-1), MBReg, bufO) then begin
               case _answerType of
@@ -180,7 +180,7 @@ begin
   end;
   //-------------------------------------
   try
-    _clientSckt.Close;
+    _clientSckt.Close(true);
   finally
     AddLog(ltInfo, _sID, 'Закрыто');
   end;

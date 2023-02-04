@@ -2,11 +2,13 @@ object fmEditFloat: TfmEditFloat
   Size.Width = 167.000000000000000000
   Size.Height = 24.000000000000000000
   Size.PlatformDefault = False
+  TabStop = False
+  TabOrder = 0
   object Edit: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     Align = Client
-    StyleLookup = 'Edit_AddrStyle'
-    TabOrder = 1
+    StyleLookup = 'EditCustomSpinStyle'
+    TabOrder = 0
     Text = '0'
     TextSettings.HorzAlign = Center
     Size.Width = 167.000000000000000000
@@ -23,9 +25,9 @@ object fmEditFloat: TfmEditFloat
       Position.X = -1.000000000000000000
       RepeatClick = True
       Size.Width = 14.000000000000000000
-      Size.Height = 20.000000000000000000
+      Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'spintopbutton'
+      StyleLookup = 'SpinUpButtonStyle'
       TabOrder = 0
       OnClick = EditButtonUpClick
     end
@@ -35,10 +37,11 @@ object fmEditFloat: TfmEditFloat
       Margins.Left = 1.000000000000000000
       Margins.Right = -1.000000000000000000
       Position.X = 14.000000000000000000
+      RepeatClick = True
       Size.Width = 14.000000000000000000
-      Size.Height = 20.000000000000000000
+      Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'spinbottombutton'
+      StyleLookup = 'SpinDownButtonStyle'
       TabOrder = 1
       OnClick = EditButtonDownClick
     end

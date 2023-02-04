@@ -100,6 +100,7 @@ type
     //
     procedure RefreshCurrAddr();
   public
+    property CheckRegs: TSelRegs read chkRegs;
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
   end;

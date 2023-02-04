@@ -337,6 +337,7 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="uIniJSON.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -380,16 +381,15 @@
                 </DeployFile>
                 <DeployFile LocalName="Win32\Debug\MbMaster.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\MbMaster.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="Win64\Debug\MbMaster.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="Win64\Debug\MbTCPServer.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>MbTCPServer.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win64\Debug\MbTCPServer.rsm" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName="Win64\Release\MbTCPServer.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
-                        <RemoteName>MbTCPServer.rsm</RemoteName>
+                        <RemoteName>MbTCPServer.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

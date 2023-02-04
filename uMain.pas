@@ -67,15 +67,15 @@ implementation
 
 {$R *.fmx}
 
-uses FMX.Styles, uTools, uFillForm, uMbRegs, IniFiles, System.IOUtils, FMX.DialogService;
+uses FMX.Styles, uTools, uFillForm, uMbRegs, System.IOUtils, FMX.DialogService, uIniJSON, uMbBuf;
 
 function INIFileName(): string;
 begin
-  Result := System.IOUtils.TPath.Combine(System.IOUtils.TPath.GetHomePath, 'MBTCPServer2.ini')
+  Result := System.IOUtils.TPath.Combine(System.IOUtils.TPath.GetHomePath, 'MBServer-EDC35E8C290D.json')
 end;
 
 procedure TfMain.FormCreate(Sender: TObject);
-var ini: TIniFile;
+var inj: TIniJSONFile;
 begin
   TStyleManager.TrySetStyleFromResource('win10style');// чтоб было одинакого на всех win
 
@@ -121,36 +121,45 @@ begin
     fmMapRegs.ColorCurrent := TAlphaColor($ff876A13);//DARKEN //E0B020-base
   end;
 
-  ini := TIniFile.Create( INIFileName );
+  inj := TIniJSONFile.Create( INIFileName );
   try
-    Height := ini.ReadInteger('0', 'h', Height);
-    Width := ini.ReadInteger('0', 'w', Width);
-    Left := ini.ReadInteger('0', 'x', Left);
-    Top := ini.ReadInteger('0', 'y', Top);
-    if ini.ReadBool('0', 'max', False) then WindowState := TWindowState.wsMaximized;
-    fmLog.Height := ini.ReadFloat('0', 'log', fmLog.Height);
+    Height := inj.getValue<Integer>('w.h', Height);
+    Width  := inj.getValue<Integer>('w.w', Width);
+    Left   := inj.getValue<Integer>('w.x', Left);
+    Top    := inj.getValue<Integer>('w.y', Top);
+    if        inj.getValue<Boolean>('w.max', False) then WindowState := TWindowState.wsMaximized;
+    fmLog.Height := inj.getValue<Single>('w.log', fmLog.Height);
     //
     with fmServerSettings do begin
-      Edit_IP.Text := ini.ReadString('ss','ip', Edit_IP.Text);
-      Edit_Port.Value := ini.ReadInteger('ss','Port', round(Edit_Port.Value));
-      Edit_Addr.Value := ini.ReadInteger('ss','Addr', round(Edit_Addr.Value));
-      Edit_MaxConn.Value := ini.ReadInteger('ss','MaxConn', round(Edit_MaxConn.Value));
-      Edit_TimeoutConn.Value := ini.ReadInteger('ss','TimeoutConn', round(Edit_TimeoutConn.Value));
-      Edit_SleepTime.Value := ini.ReadInteger('ss','SleepTime', round(Edit_SleepTime.Value));
-
-      Edit_Error.ItemIndex := ini.ReadInteger('ss','sError', Edit_Error.ItemIndex);
-      Edit_Data.Edit.Text  := ini.ReadString('ss','sData', Edit_Data.Edit.Text);
-      Edit_ADU.Edit.Text   := ini.ReadString('ss','sADU',  Edit_ADU.Edit.Text);
-      Edit_Full.Edit.Text  := ini.ReadString('ss','sFull', Edit_Full.Edit.Text);
+      Edit_IP.Text           := inj.getValue<string> ('ss.ip', '0.0.0.0');
+      Edit_Port.Value        := inj.getValue<UInt16> ('ss.port', 502);
+      Edit_Addr.Value        := inj.getValue<UInt8>  ('ss.addr', 0);
+      Edit_MaxConn.Value     := inj.getValue<UInt16> ('ss.maxCon', 0);
+      Edit_TimeoutConn.Value := inj.getValue<Integer>('ss.timeout', 10_000);
+      Edit_SleepTime.Value   := inj.getValue<UInt32> ('ss.sleep', 0);
+      //
+      Edit_Error.ItemIndex := inj.getValue<Integer>('ss.aError', 0);
+      Edit_Data.Edit.Text  := inj.getValue<string> ('ss.aData', '');
+      Edit_ADU.Edit.Text   := inj.getValue<string> ('ss.aADU',  '');
+      Edit_Full.Edit.Text  := inj.getValue<string> ('ss.aFull', '');
     end;
+    frmMapReg_4x.fmMapRegs.CheckRegs.AddRange( inj.getValue<TArray<UInt16>>('4x.check', []) );
+    frmMapReg_3x.fmMapRegs.CheckRegs.AddRange( inj.getValue<TArray<UInt16>>('3x.check', []) );
+    frmMapReg_1x.fmMapRegs.CheckRegs.AddRange( inj.getValue<TArray<UInt16>>('1x.check', []) );
+    frmMapReg_0x.fmMapRegs.CheckRegs.AddRange( inj.getValue<TArray<UInt16>>('0x.check', []) );
+    //
+    setRegs4x( inj.getValue<TMBRegs>('4x.data', []), 0 );
+    setRegs3x( inj.getValue<TMBRegs>('3x.data', []), 0 );
+    setRegs1x( inj.getValue<TMBDiscrets>('1x.data', []), 0 );
+    setRegs0x( inj.getValue<TMBDiscrets>('0x.data', []), 0 );
   finally
-    FreeAndNil(ini);
+    FreeAndNil(inj);
   end;
 
 end;
 
 procedure TfMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
-var ini: TIniFile;
+var inj: TIniJSONFile;
 begin
   if Assigned(MbServer) then begin
     MbServer.OnTerminate := nil;
@@ -158,38 +167,46 @@ begin
   end;
   logThread.Terminate;
 
-  ini := TIniFile.Create( INIFileName );
+  inj := TIniJSONFile.Create( INIFileName );
   //ini := TIniFile.Create( 'ComPort.ini');
   try
-    ini.WriteBool   ('0', 'max', WindowState=TWindowState.wsMaximized);
+    inj.setValue('w.max', WindowState=TWindowState.wsMaximized);
     if WindowState<>TWindowState.wsMaximized then begin
-      ini.WriteInteger('0', 'h', Height);
-      ini.WriteInteger('0', 'w', Width);
-      ini.WriteInteger('0', 'x', Left);
-      ini.WriteInteger('0', 'y', Top);
+      inj.setValue('w.h', Height);
+      inj.setValue('w.w', Width);
+      inj.setValue('w.x', Left);
+      inj.setValue('w.y', Top);
     end;
-    ini.WriteFloat('0', 'log', fmLog.Height);
-
+    inj.setValue('w.log', fmLog.Height);
+    //
     with fmServerSettings do begin
-      ini.WriteString('ss','ip', Edit_IP.Text);
-      ini.WriteInteger('ss','Port', round(Edit_Port.Value));
-      ini.WriteInteger('ss','Addr', round(Edit_Addr.Value));
-      ini.WriteInteger('ss','MaxConn', round(Edit_MaxConn.Value));
-      ini.WriteInteger('ss','TimeoutConn', round(Edit_TimeoutConn.Value));
-      ini.WriteInteger('ss','SleepTime', round(Edit_SleepTime.Value));
-
-      ini.WriteInteger('ss','sError', Edit_Error.ItemIndex);
-      ini.WriteString('ss','sData', Edit_Data.Edit.Text);
-      ini.WriteString('ss','sADU',  Edit_ADU.Edit.Text);
-      ini.WriteString('ss','sFull', Edit_Full.Edit.Text);
+      inj.setValue('ss.ip',          Edit_IP.Text);
+      inj.setValue('ss.port',        round(Edit_Port.Value));
+      inj.setValue('ss.addr',        round(Edit_Addr.Value));
+      inj.setValue('ss.maxCon',     round(Edit_MaxConn.Value));
+      inj.setValue('ss.timeout', round(Edit_TimeoutConn.Value));
+      inj.setValue('ss.sleep',   round(Edit_SleepTime.Value));
+      //
+      inj.setValue('ss.aError', Edit_Error.ItemIndex);
+      inj.setValue('ss.aData',  Edit_Data.Edit.Text);
+      inj.setValue('ss.aADU',   Edit_ADU.Edit.Text);
+      inj.setValue('ss.aFull',  Edit_Full.Edit.Text);
     end;
-
+    inj.setValue('4x.check', frmMapReg_4x.fmMapRegs.CheckRegs.ToArray);
+    inj.setValue('3x.check', frmMapReg_3x.fmMapRegs.CheckRegs.ToArray);
+    inj.setValue('1x.check', frmMapReg_1x.fmMapRegs.CheckRegs.ToArray);
+    inj.setValue('0x.check', frmMapReg_0x.fmMapRegs.CheckRegs.ToArray);
+    //
+    inj.setValue('4x.data', TArray<UInt16>(getRegs4x(0, $10_000)));
+    inj.setValue('3x.data', TArray<UInt16>(getRegs3x(0, $10_000)));
+    inj.setValue('1x.data', TArray<Boolean>(getRegs1x(0, $10_000)));
+    inj.setValue('0x.data', TArray<Boolean>(getRegs0x(0, $10_000)));
   except
     on e: Exception do
       TDialogService.MessageDialog('При сохранении настроек произошла ошибка:'#13+e.Message,
         TMsgDlgType.mtError, [TMsgDlgBtn.mbClose], TMsgDlgBtn.mbClose, e.HelpContext, nil);
   end;
-  FreeAndNil(ini);
+  FreeAndNil(inj);
 end;
 
 procedure TfMain.BtnCloseClick(Sender: TObject);

@@ -364,8 +364,8 @@ object frmMapReg_Registers: TfrmMapReg_Registers
       Size.Height = 438.000000000000000000
       inherited GridFixCol: TGrid
         Size.Height = 438.000000000000000000
-        Viewport.Width = 48.000000000000000000
-        Viewport.Height = 410.000000000000000000
+        Viewport.Width = 50.000000000000000000
+        Viewport.Height = 438.000000000000000000
         inherited FixCol: TStringColumn
           Size.Width = 50.000000000000000000
         end
@@ -375,7 +375,7 @@ object frmMapReg_Registers: TfrmMapReg_Registers
         Size.Width = 574.000000000000000000
         Size.Height = 438.000000000000000000
         Viewport.Width = 574.000000000000000000
-        Viewport.Height = 411.000000000000000000
+        Viewport.Height = 438.000000000000000000
       end
       inherited Splitter: TSplitter
         Size.Height = 438.000000000000000000

@@ -3,7 +3,7 @@
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Edit, FMX.Controls.Presentation;
 
 type
@@ -108,7 +108,7 @@ end;
 procedure TfmEditFloat.EditChangeTracking(Sender: TObject);
 var
   m: TMatch;
-  s: string;
+  s,ss: string;
   e: Integer;
   v: TType;
   notEnd: Boolean;// признак не законченного ввода
@@ -116,38 +116,57 @@ begin
   if update then exit;
   s := (Sender as TEdit).Text;
   if s='' then exit;
+  s := s.Replace(',','.');
+  ss := s;
+  //s := s.Trim;
   notEnd := False;
   // full Match '[+-]?((\d+(\.\d*)?)|(\.\d+))([eE][+-]?\d+)?')
   // с экспнициальной частью
-  m := TRegEx.Match(s, '[+-]?((\d+(\.\d*)?)|(\.\d+))[eE][+-]?\d+');
+  m := TRegEx.Match(s, '^[+-]?((\d+(\.\d*)?)|(\.\d+))[eE][+-]?\d+');
   if m.Success then
     s := m.Value
   else begin
     // не дописанная экспнициальная часть
-    m := TRegEx.Match(s, '[+-]?((\d+(\.\d*)?)|(\.\d+))[eE][+-]?');
+    m := TRegEx.Match(s, '^[+-]?((\d+(\.\d*)?)|(\.\d+))[eE][+-]?');
     notEnd := m.Success;
     if m.Success then
       s := m.Value
     else begin
       // без экспнициальной части
-      m := TRegEx.Match(s, '[+-]?((\d+(\.\d*)?)|(\.\d+))');
+      m := TRegEx.Match(s, '^[+-]?((\d+\.\d+)|(\.\d+))');
       if m.Success then
         s := m.Value
       else begin
-        notEnd := True;
-        // не законченный ввод
-        m := TRegEx.Match(s, '[+-]?\.');
+        // число c точкой
+        m := TRegEx.Match(s, '^[+-]?\d+\.');
+        notEnd := m.Success;
         if m.Success then
           s := m.Value
         else begin
-          m := TRegEx.Match(s, '[+-]');
-          s := m.Value
+          // число
+          m := TRegEx.Match(s, '^[+-]?\d+');
+          if m.Success then
+            s := m.Value
+          else begin
+            notEnd := True;
+            // просто точка
+            m := TRegEx.Match(s, '^[+-]?\.');
+            if m.Success then
+              s := m.Value
+            else begin
+              // пустая строка или + или -
+              m := TRegEx.Match(s, '^[+-]?');
+              s := m.Value
+            end;
+          end;
         end;
       end;
     end;
   end;
-  if notEnd then begin //если не законченный ввод, то просто обновляем текст
-    if s <> Edit.Text then begin
+  if s <> ss then begin
+    Edit.Text := s;
+  end else if notEnd then begin //если не законченный ввод, то просто обновляем текст
+    if s <> ss then begin
       update := True;
       Edit.Text := s;
       update := False;
@@ -168,4 +187,6 @@ begin
   update := False;
 end;
 
+initialization
+  System.SysUtils.FormatSettings.DecimalSeparator := '.';
 end.
